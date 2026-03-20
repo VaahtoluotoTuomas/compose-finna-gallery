@@ -1,5 +1,11 @@
 # Finna API Image Gallery
 
+<p align="center">
+  <img src="screenshots/main_grid_view.png" width="30%" alt="Main Gallery Grid View"/> 
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="screenshots/one_pic_fullscreen_view.png" width="30%" alt="Full Screen Image View"/>
+</p>
+
 A native Android application that fetches and displays historical landscape images from the open Finna REST API. Implemented with MVVM architecture and Jetpack Compose.
 
 ## Technologies and Architecture
