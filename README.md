@@ -1,26 +1,26 @@
-# Finna API -kuvaselain
+# Finna API Image Gallery
 
-Natiivi Android-sovellus, joka hakee ja esittää historiallisia maisemakuvia Finnan avoimesta REST API -rajapinnasta. Toteutettu MVVM-arkkitehtuurilla ja Jetpack Composella.
+A native Android application that fetches and displays historical landscape images from the open Finna REST API. Implemented with MVVM architecture and Jetpack Compose.
 
-## Teknologiat ja arkkitehtuuri
-* **Käyttöliittymä (View):** Jetpack Compose (`LazyVerticalStaggeredGrid`, `HorizontalPager`)
-* **Tilanhallinta (ViewModel):** MVVM, Kotlin Coroutines, `StateFlow`
-* **Verkkokerros (Model):** Retrofit2 & Gson
-* **Kuvien lataus:** Coil (`AsyncImage`)
+## Technologies and Architecture
+* **User Interface (View):** Jetpack Compose (`LazyVerticalStaggeredGrid`, `HorizontalPager`)
+* **State Management (ViewModel):** MVVM, Kotlin Coroutines, `StateFlow`
+* **Network Layer (Model):** Retrofit2 & Gson
+* **Image Loading:** Coil (`AsyncImage`)
 
-## Keskeiset ominaisuudet
-* **Dynaaminen API-haku:** Vuosiluvun valinta (1880–2020) Compose Sliderilla.
-* **Loputon kuvavirta (Infinite Scroll):** Lataa automaattisesti lisää tuloksia listan lopussa (`page`, `limit`).
-* **Koko ruudun selaus:** Kuvan suurentaminen ja tulosten selaus pyyhkäisemällä.
-* **Kuvien satunnaistaminen:** Haku hyödyntää dynaamista siemenlukua (`random_seed`), jotta tulokset vaihtuvat joka haulla.
+## Key Features
+* **Dynamic API Search:** Year selection (1880–2020) using a Compose Slider.
+* **Infinite Scroll:** Automatically loads more results at the end of the list (`page`, `limit`).
+* **Full-Screen Browsing:** Image zooming and swipe-to-browse functionality for search results.
+* **Image Randomization:** The search utilizes a dynamic seed (`random_seed`) to ensure results vary with each search.
 
-## API-integraatio
-Sovellus tekee HTTP GET -pyyntöjä Finnan rajapintaan asynkronisesti.
+## API Integration
+The application makes asynchronous HTTP GET requests to the Finna API.
 * **Base URL:** `https://api.finna.fi/`
-* **Esimerkkipyyntö (vapaasanahaku + kuvarajaus):**
+* **Example Request (free text search + image filter):**
   `https://api.finna.fi/api/v1/search?lookfor=maisema+1920&filter[]=format:"0/Image/"&limit=20`
 
-## Suorittaminen
-1. Avaa projekti Android Studiossa.
-2. Synkronoi Gradle-riippuvuudet (Retrofit, Coil, Gson).
-3. Aja sovellus internet-yhteydellä varustetussa emulaattorissa tai fyysisessä laitteessa.
+## How to Run
+1. Open the project in Android Studio.
+2. Sync Gradle dependencies (Retrofit, Coil, Gson).
+3. Run the app on an emulator or a physical device with an active internet connection.
